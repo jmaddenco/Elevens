@@ -8,13 +8,17 @@ public class CardTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		Card queenOfSpades = new Card("Queen", "Spades", 5);
-		Card kingOfHearts = new Card("King", "Hearts", 6);
-		Card tenOfClover = new Card("ten", "Clover", 3);
-		System.out.println(queenOfSpades.suit());
-		System.out.println(queenOfSpades.toString());
-		System.out.println(queenOfSpades.pointValue());
-		System.out.println(kingOfHearts.toString());
-		
+		Card card1 = new Card("King", "Clubs", 10);
+		Card card2 = new Card("Ace", "Hearts", 1);
+		Card card3 = new Card("Five", "Diamonds", 5);
+
+		System.out.println(card1.suit());
+		System.out.println(card2.rank());
+		System.out.println(card3.pointValue());
+		System.out.println(card1.matches(card2));
+
+		System.out.println(card1.toString());
+		System.out.println(card2.toString());
+		System.out.println(card3.toString());
 	}
 }
