@@ -12,7 +12,7 @@ public class DeckTester {
 		String[] suits1 = {"Hearts", "Clubs", "Spades", "Diamonds"};
 		int[] values1 = {2, 4, 6, 13};
 	    Deck deck1 = new Deck(ranks1, suits1, values1);
-	    System.out.println("How many cards are in this deck? " + deck1.size());
+	    System.out.println("How many cards are in the deck? " + deck1.size());
 	   
 	    
 	    String[] ranks2 = {};
