@@ -37,8 +37,7 @@ public class Deck {
 				cards.add(card);
 			}
 		}
-		size = cards.size();
-	
+		size = cards.size();	
 	}
 
 
@@ -75,11 +74,10 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-        if (!(cards.isEmpty())) {
-        	size--;
-            return cards.remove(size);
-        }
-        return null;
+    	Card dealt = cards.get(size - 1);
+		size--;
+
+		return dealt;
     }
 
     /**
