@@ -42,7 +42,7 @@ public class Deck {
 
 
     /**
-     * Determines if this deck is empty (no undealt cards).
+     * Determines if this deck is empty (no  cards).
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
@@ -53,8 +53,8 @@ public class Deck {
     }
 
     /**
-     * Accesses the number of undealt cards in this deck.
-     * @return the number of undealt cards in this deck.
+     * Accesses the number of  cards in this deck.
+     * @return the number of  cards in this deck.
      */
     public int size() {
         return cards.size();
