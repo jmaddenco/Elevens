@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -32,7 +34,7 @@ public class Shuffler {
 								 " consecutive efficient selection shuffles:");
 		int[] values2 = {0, 1, 2, 3};
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
+			betterSelectionShuffle(values2);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values2[k]);
@@ -50,7 +52,18 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int index = 0;
+
+		for (int a=0, b=values.length/2; a<values.length/2 && b<values.length; a++, b++) {
+			shuffled[index] = values[a];
+			index++;
+			shuffled[index] = values[b];
+			index++;
+		}
+		for (int a = 0; a < values.length; a++) {
+			values[a] = shuffled[a];
+		}
 	}
 
 	/**
@@ -64,7 +77,25 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void betterSelectionShuffle(int[] values) {
+		List<Integer> picked = new ArrayList<Integer>();
+		List<Integer> notPicked = new ArrayList<Integer>();
+		int rand = 0;
+		
+		for (int a=0; a<values.length; a++) {
+			notPicked.add(values[a]);
+		}
+
+		for (int a=notPicked.size(); a>0; a--) {
+			rand = (int) (Math.random()*notPicked.size());
+			picked.add(notPicked.get(rand));
+			notPicked.remove(rand);
+		}
+
+		for (int a=0; a<picked.size(); a++) {
+			values[a] = picked.get(a);
+		}
 	}
+
+	
 }
